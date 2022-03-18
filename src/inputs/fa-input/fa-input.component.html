@@ -1,8 +1,43 @@
-<label for="email"> FA Email: </label>
-<i class="fa fa-envelope"></i>
-<input type="text" placeholder="Enter Email">
+<!-- <div class="col-lg-12">
+
+    <h4> Level 1 : Using fa classes seperately </h4>
+
+    <label for="email"> FA Email: </label>
+    <i class="fa fa-envelope"></i>
+    <input type="text" placeholder="Enter Email">
 
 
-<label for="email"> FA Password: </label>
-<i class="fa fa-unlock-alt"></i>
-<input type="text" placeholder="Enter Password">
+    <label for="password"> FA Password: </label>
+    <i class="fa fa-unlock-alt"></i>
+    <input type="text" placeholder="Enter Password">
+</div> -->
+<!-- <hr> -->
+<div class="col-lg-12">
+
+    <!-- <h4> Level 2: Using ngclass directive to dynamically pass on fa class</h4> -->
+
+    <label for="email"> FA Email: </label>
+    <i [ngClass]="faClass"></i>
+    <input type="text" placeholder="Enter Email">
+
+
+    <!-- <label for="password"> FA Password: {{ faClass }}</label>
+    <i [ngClass]="faClass"></i>
+    <input type="text" placeholder="Enter Password"> -->
+
+    <!-- <caption> Note: ngClass expects object as input so we need to property bind on an object </caption> -->
+
+</div>
+<!-- <hr>
+<div class="col-lg-12">
+
+    <h4> Level 3: Using For to loop in - Pending </h4>
+</div> -->
+
+<!-- <ng-container *ngFor="let inputItem of inputList">
+    <label [for]="inputItem.name"> FA {{ inputItem.name }}: </label>
+    <i [ngClass]="inputItem.class"></i>
+    <input [type]="inputItem.type" [placeholder]="Enter + inputItem.name">
+</ng-container> -->
+
+

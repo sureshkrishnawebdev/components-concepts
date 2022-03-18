@@ -1,0 +1,20 @@
+<h4> Parent Input </h4>
+<div class="col-lg-12">
+    <h4> Font Awesome Inputs </h4>
+
+    <hr>
+
+    <h4> Property binding as its inside an loop -- [icon]</h4>
+    <ng-container *ngFor="let icon of icons">
+        <app-fa-input [icon]="icon" ></app-fa-input>
+    </ng-container>
+
+    or 
+
+    <h4> when value passed as string -- icon </h4>
+    <app-fa-input icon="envelope" ></app-fa-input>
+    <app-fa-input icon="unlock-alt" ></app-fa-input>
+
+    <hr>
+
+</div>
