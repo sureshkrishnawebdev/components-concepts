@@ -1,4 +1,5 @@
-import { AfterContentInit, Component, ContentChild, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, HostBinding, Input, OnInit } from '@angular/core';
+import { InputRefDirective } from '../shared/directives/input-ref.directive';
 
 @Component({
   selector: 'app-fa-input',
@@ -10,10 +11,16 @@ export class FaInputComponent implements OnInit, AfterContentInit {
   @Input()
   icon: string = '';
 
-  @ContentChild('inputRef')
-  inputRef!: HTMLInputElement;
+  @ContentChild(InputRefDirective)
+  inputRef!: InputRefDirective;
 
-  constructor() { }
+  // note 1 : when using directives - we shouldn't use them inside quotes
+  // wrong - @ContentChild('InputRefDirective')
+  // correct - @ContentChild(InputRefDirective)
+
+  // note 2 : when using hostbinding to apply class - we shouldn't start class with .
+  // wrong - @HostBinding('.class.input-focus')
+  // correct - @HostBinding('class.input-focus')
 
   ngOnInit(): void {
     console.log(`inside ngOnInit inputRef `, this.inputRef);
@@ -21,6 +28,14 @@ export class FaInputComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     console.log(`inside ngAfterContentInit inputRef `, this.inputRef);
+    if(!this.inputRef){
+      console.error('app-fa-input requires an input element')
+    }
+  }
+
+  @HostBinding('class.input-focus')
+  get isInputFocus(){
+    return this.inputRef ? this.inputRef.focus : false;
   }
 
   get faClass(){
