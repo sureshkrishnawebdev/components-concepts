@@ -1,3 +1,9 @@
+
+ <i class="icon" [ngClass]="faClass"></i>
+ <input type="text" placeholder="Enter Email">
+
+
+<!-- 3 levels  -->
 <!-- <div class="col-lg-12">
 
     <h4> Level 1 : Using fa classes seperately </h4>
@@ -12,22 +18,17 @@
     <input type="text" placeholder="Enter Password">
 </div> -->
 <!-- <hr> -->
-<div class="col-lg-12">
+<!-- <div class="col-lg-12">
 
-    <!-- <h4> Level 2: Using ngclass directive to dynamically pass on fa class</h4> -->
+    <h4> Level 2: Using ngclass directive to dynamically pass on fa class</h4>
 
     <label for="email"> FA Email: </label>
     <i [ngClass]="faClass"></i>
     <input type="text" placeholder="Enter Email">
 
+    <caption> Note: ngClass expects object as input so we need to property bind on an object </caption>
 
-    <!-- <label for="password"> FA Password: {{ faClass }}</label>
-    <i [ngClass]="faClass"></i>
-    <input type="text" placeholder="Enter Password"> -->
-
-    <!-- <caption> Note: ngClass expects object as input so we need to property bind on an object </caption> -->
-
-</div>
+</div> -->
 <!-- <hr>
 <div class="col-lg-12">
 
@@ -40,4 +41,22 @@
     <input [type]="inputItem.type" [placeholder]="Enter + inputItem.name">
 </ng-container> -->
 
+<!-- Angular component styling 
 
+1. selectors - Isolation 
+
+    1.1. host pseudo selector
+    -------------------------
+        1. Its the default selector provided by angular for a component
+        2. It avoids creating/ wrapping inside a div container to style our component
+            (instead of styling element inside the component we directly style the host of the component )
+        3. It helps to isolate our styling specific to this component 
+            so wherever this component is used these styles this avoids dependency of parent component
+        
+
+
+
+
+
+
+-->
