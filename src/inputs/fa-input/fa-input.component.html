@@ -56,9 +56,31 @@
 
     1.2. host + ng deep selector
     ---------------------------
-        1. In a scenario when we apply
+        1. In a scenario when we need to persist the styles applied to host component elements        
 
+2. To Have control over the projected content
 
+    2.1. contentchild + template ref
+    --------------------------------
+        To get reference of native DOM ELement
+        1. tempalteRef - get the reference of element from parent from where its projected
+        2. contentchild - at the host component where projection takes place.
+        3. the conditions/ operation to be performed is only available on ngAfterContentInit hook not ngOnint
 
+     2.2. Auxillary Drirective 
+     -------------------------
+        ng g directive inputRef
+        1. Directive selector 
+            1.1-  [inputRef] - Enclosed inside square bracket -  global
+                -> whatever the component we can put this directive on to the html element which we are going to change behaviour 
+            1.2. - 'app-fa-input input' - using selector of one component and specifying element type - specific
+                -> by this way the functionality inside this directive is scoped only to component which has respective selector and element type
 
+        2. contentChild( InputRefDirective ) -  pass this directive ref 
+        3. Inside the Directive - Implement the methods 
+            using Host listener
+        4. Inside the component - where the directive is injected 
+            - use Host Binding - which returns the boolean
+        5. Add css state class -> :host(.input-focus)  
+            -- which will be invoked via host binding
 -->
