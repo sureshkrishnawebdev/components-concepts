@@ -8,7 +8,7 @@
     padding-right: 25px;
 }
 
-input{
+:host ::ng-deep input{
     border: none;
     outline: none;
 }
